@@ -15,56 +15,52 @@ public class Names {
         Map<String, String> map1 = new HashMap<String, String>();
         Map<String, String> map2 = new HashMap<String, String>();
         Map<String, String> map3 = new HashMap<String, String>();
-        for (int i = 0; i < 1; i++) {
-            map.put("Имя", "Kiril");
-            map.put("Возраст", "26");
-            map.put("Должность", "Middle java dev");
-            map.put("Зарплата", "150000 руб");
-            employees.add(map);
-        }
-        for (int i = 0; i < 1; i++) {
-            map1.put("Имя", "Виталий");
-            map1.put("Возраст", "28");
-            map1.put("Должность", "Senior java automation QA");
-            map1.put("Зарплата", "2000$");
-            employees.add(map1);
-        }
-        for (int i = 0; i < 1; i++) {
-            map2.put("Имя", "Александр");
-            map2.put("Возраст", "31");
-            map2.put("Должность", "junior functional tester");
-            map2.put("Зарплата", "50000 руб");
-            employees.add(map2);
-        }
-        for (int i = 0; i < 1; i++) {
-            map3.put("Имя", "Дементий");
-            map2.put("Возраст", "35");
-            map3.put("Должность", "dev-ops");
-            map3.put("Зарплата", "1500$");
-            employees.add(map3);
-        }
 
+        map.put("Имя", "Kiril");
+        map.put("Возраст", "26");
+        map.put("Должность", "Middle java dev");
+        map.put("Зарплата", "150000 руб");
+        employees.add(map);
+
+
+        map1.put("Имя", "Виталий");
+        map1.put("Возраст", "28");
+        map1.put("Должность", "Senior java automation QA");
+        map1.put("Зарплата", "2000$");
+        employees.add(map1);
+
+
+        map2.put("Имя", "Александр");
+        map2.put("Возраст", "31");
+        map2.put("Должность", "junior functional tester");
+        map2.put("Зарплата", "50000 руб");
+        employees.add(map2);
+
+
+        map3.put("Имя", "Дементий");
+        map3.put("Возраст", "35");
+        map3.put("Должность", "dev-ops");
+        map3.put("Зарплата", "1500$");
+        employees.add(map3);
+
+        System.out.println("Task #1");
         //вывести имена всех сотрудников, получающих зарплату в рублях
         employees.stream()
-                .filter(n -> n.get("Возраст").contains("руб"))
+                .filter(n -> n.get("Зарплата").contains("руб"))
                 .forEach(System.out::println);
 
-       
+        System.out.println("Task #2");
+        //Employees who are less than 30:
         employees.stream()
-                .mapToInt(num -> Integer.parseInt(String.valueOf(num)))
-                .filter(num -> num < 30)
+                .filter(n -> Integer.parseInt(n.get("Возраст")) < 30)
                 .forEach(System.out::println);
 
-
-        System.out.println("Testing");
-        for (int i = 0; i < employees.size(); i++) {
-            System.out.println("Имя: " + employees.get(i).get("Имя"));
-            System.out.println("Возраст: " + employees.get(i).get("Возраст"));
-            System.out.println("Должность: " + employees.get(i).get("Должность"));
-            System.out.println("Зарплата: " + employees.get(i).get("Зарплата"));
-            System.out.println("****************");
-
-        }
+        //printing out the average
+        System.out.println("Task #3");
+        employees.stream()
+                .mapToInt(x -> Integer.parseInt(x.get("Возраст")))
+                .average()
+                .ifPresent(System.out::println);
 
     }
 }
