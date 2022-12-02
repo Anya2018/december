@@ -10,11 +10,11 @@ public class Names {
     public static void main(String[] args) throws IOException {
 
 
-        List<Map<String, String>> employees = new ArrayList<Map<String, String>>();
-        Map<String, String> map = new HashMap<String, String>();
-        Map<String, String> map1 = new HashMap<String, String>();
-        Map<String, String> map2 = new HashMap<String, String>();
-        Map<String, String> map3 = new HashMap<String, String>();
+        List<Map<String, String>> employees = new ArrayList<>();
+        Map<String, String> map = new HashMap<>();
+        Map<String, String> map1 = new HashMap<>();
+        Map<String, String> map2 = new HashMap<>();
+        Map<String, String> map3 = new HashMap<>();
 
         map.put("Имя", "Kiril");
         map.put("Возраст", "26");
